@@ -76,6 +76,10 @@ function draw(){
   //  box2.display()
     wing.display()
 }
+
+
+
+
 function mouseDragged(){
     Matter.Body.setPosition(box.body,{x:mouseX,y:mouseY})
 }
@@ -83,3 +87,11 @@ function mouseDragged(){
 function mouseReleased(){
     wing.fly();
 }
+
+function keyPressed()
+{
+    if(keyCode === 32){
+        wing.attach(box.body);
+    }
+}
+ 
