@@ -1,9 +1,10 @@
 class Box{
    constructor(){
       var options={
+          "isStatic":false,
           "restitution":0.8,
-          "friction":0.3,
-          "density":1.0
+          "friction":1,
+          "density":1.2
 
 
       
@@ -17,12 +18,11 @@ class Box{
     }
 display(){
     var pos=this.body.position;
-    pos.x = mouseX;
-    pos.y = mouseY;
+    var angle=this.body.angle
     
     push();
     translate(pos.x,pos.y);
-    
+    rotate(angle);
     fill("yellow");
     rectMode(CENTER)
     rect(0,0,this.width,this.height);
